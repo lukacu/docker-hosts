@@ -2,6 +2,8 @@ FROM tozd/runit
 
 MAINTAINER Jernej Kos <jernej@kos.mx>
 
+ENV DOMAIN_NAME docker
+
 ADD . /build
 
 RUN apt-get update -q -q && \

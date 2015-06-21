@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-exec /usr/local/bin/docker-host --domain-name=docker /hosts 2>&1
+exec /usr/local/bin/docker-host --domain-name=${DOMAIN_NAME:-docker} /hosts 2>&1
 
