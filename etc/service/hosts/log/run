@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+mkdir -p /var/log/hosts
+chown nobody:nogroup /var/log/hosts
+
+exec chpst -u nobody:nogroup svlogd -tt /var/log/hosts
