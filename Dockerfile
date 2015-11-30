@@ -1,8 +1,13 @@
 FROM tozd/runit
 
-MAINTAINER Jernej Kos <jernej@kos.mx>
-
 ENV DOMAIN_NAME docker
+ENV HOSTS_PATH /hosts
+
+VOLUME /var/log/hosts
+
+# You should also volume mount "/var/run/docker.sock" from the host into the container under "/var/run/docker.sock".
+# You should volume mount a file into the container under "/hosts" (or to what "HOSTS_PATH" is set) and it will be
+# populated with entries.
 
 ADD . /build
 
@@ -21,4 +26,3 @@ RUN apt-get update -q -q && \
  apt-get autoremove --yes --force-yes
 
 ADD ./etc /etc
-
