@@ -35,7 +35,7 @@ application.
 ## Running on the host ##
 
 You can also run `docker-hosts` directly on the host. First, you have to build it. This project uses
-[gpm][https://github.com/pote/gpm] and [gvp][https://github.com/pote/gvp]. Both must be available on your
+[gpm](https://github.com/pote/gpm) and [gvp](https://github.com/pote/gvp). Both must be available on your
 path. Run:
 
 ```
