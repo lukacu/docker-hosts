@@ -85,8 +85,11 @@ func (h *Hosts) Add(containerId string) {
         return
     }
 
+    networkId := "bridge";
+    network := container.NetworkSettings.Networks[networkId];
+
     entry := HostEntry{
-        IPAddress:         container.NetworkSettings.IPAddress,
+        IPAddress:         network.IPAddress,
         CanonicalHostname: container.Config.Hostname,
         Aliases:           []string{
         // container.Name[1:], // could contain "_"
